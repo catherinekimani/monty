@@ -28,7 +28,15 @@ void monty_mod(stack_t **stack, unsigned int line_number)
 		monty_free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-
+	second_top = *stack;
+	if (second_top->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		fclose(que.fd);
+		free(que.ptr_content);
+		monty_free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
 	result = second_top->next->n % second_top->n;
 	second_top->next->n = result;
 	*stack = second_top->next;
