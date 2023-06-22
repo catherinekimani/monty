@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 
 		if (rd_line > 0)
 		{
-			monty_execute(ptr_content, &stack, count, fd);
+			execute_opcode(ptr_content, &stack, count, fd);
 		}
 		free(ptr_content);
 	}
