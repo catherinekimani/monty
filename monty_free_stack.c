@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-  *monty_free_satck- Frees list
+  *monty_free_stack - Frees list
   *@head: Head of stack
   *
   */
