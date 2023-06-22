@@ -30,7 +30,7 @@ void monty_div(stack_t **head, unsigned int count)
 	hd = *head;
 	if (hd->n == 0)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", count);
+		fprintf(stderr, "L%d: division by zero\n", count);
 		fclose(que.fd);
 		free(que.ptr_content);
 		monty_free_stack(*head);
