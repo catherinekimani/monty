@@ -39,7 +39,7 @@ void monty_push(stack_t **head, unsigned int count)
 	x = atoi(que.val);
 
 	if (que.f == 0)
-		monty_addnde(head, x);
+		monty_addnode(head, x);
 	else
 		monty_add_queue(head, x);
 }
