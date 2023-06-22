@@ -10,8 +10,7 @@
 void monty_add(stack_t **head, unsigned int count)
 {
 	stack_t *hd;
-	int length = 0;
-	int pt;
+	int length = 0, res;
 
 	hd = *head;
 	while (hd)
@@ -21,15 +20,15 @@ void monty_add(stack_t **head, unsigned int count)
 	}
 	if (length < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", count);
+		fprintf(stderr, "L%d: can't add, stack too short\n", count);
 		fclose(que.fd);
 		free(que.ptr_content);
 		monty_free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	hd = *head;
-	pt = hd->n + hd->next->n;
-	hd->next->n = pt;
+	res = hd->n + hd->next->n;
+	hd->next->n = res;
 	*head = hd->next;
 	free(hd);
 }
